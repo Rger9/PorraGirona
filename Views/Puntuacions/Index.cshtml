@@ -1,0 +1,54 @@
+﻿@model IEnumerable<PorraGirona.DataLayer.puntuacions>
+
+@{
+    ViewData["Title"] = "Puntuacions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idpenyista)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.alias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.puntuacio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.temporada)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idpenyista)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.alias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.puntuacio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.temporada)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.idpuntuacio">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.idpuntuacio">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.idpuntuacio">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

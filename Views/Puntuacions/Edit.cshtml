@@ -1,0 +1,50 @@
+﻿@model PorraGirona.DataLayer.puntuacions
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>puntuacions</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="idpuntuacio" />
+            <div class="form-group">
+                <label asp-for="idpenyista" class="control-label"></label>
+                <input asp-for="idpenyista" class="form-control" />
+                <span asp-validation-for="idpenyista" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="alias" class="control-label"></label>
+                <input asp-for="alias" class="form-control" />
+                <span asp-validation-for="alias" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="puntuacio" class="control-label"></label>
+                <input asp-for="puntuacio" class="form-control" />
+                <span asp-validation-for="puntuacio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="temporada" class="control-label"></label>
+                <input asp-for="temporada" class="form-control" />
+                <span asp-validation-for="temporada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
